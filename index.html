@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Home Screen -->
+        <div id="home-screen" class="screen active">
+            <h1>Welcome to the Quiz!</h1>
+            <p style="text-align: center;">Test your knowledge with random questions from our database.</p>
+            <button id="start-btn" class="btn">Start Quiz</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="timer">
+                    <span id="time">30</span>s
+                </div>
+                <div class="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+                <div class="question-count">
+                    Question <span id="current-question">1</span>/20
+                </div>
+            </div>
+
+            <div id="question-container">
+                <h2 id="question">Question will appear here</h2>
+                <div id="answer-buttons" class="btn-grid">
+                    <!-- Answer buttons will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <h1>Quiz Completed!</h1>
+            <div class="stats">
+                <p>Correct Answers: <span id="correct-answers">0</span></p>
+                <p>Incorrect Answers: <span id="incorrect-answers">0</span></p>
+                <p>Final Score: <span id="score">0</span>%</p>
+                <hr style="margin: 1rem 0; border: 0; border-top: 1px solid var(--border);">
+                <p id="progress-message" style="font-style: italic; color: var(--text-muted); justify-content: center;">
+                    First Quiz!</p>
+            </div>
+
+            <button id="toggle-analysis-btn" class="btn"
+                style="background: var(--surface); border: 1px solid var(--border); margin-bottom: 1rem;">
+                <i class="fas fa-list"></i> View Detailed Analysis
+            </button>
+
+            <div id="analysis-container"
+                style="display: none; margin-bottom: 2rem; max-height: 300px; overflow-y: auto;">
+                <!-- Analysis items injected here -->
+            </div>
+
+            <div class="btn-grid">
+                <button id="restart-btn" class="btn">Restart Quiz</button>
+                <a href="admin.html" class="btn"
+                    style="text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center;">Manage
+                    Questions</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

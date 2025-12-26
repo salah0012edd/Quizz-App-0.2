@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Admin</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Using a specific version is safer, but unpkg latest is fine for this demo context if user didn't specify -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container" style="width: 800px;">
+        <div class="admin-header">
+            <h1>Question Manager</h1>
+            <a href="index.html" class="btn btn-icon"><i class="fas fa-home"></i> Back to Quiz</a>
+        </div>
+
+        <div class="stats" style="margin-bottom: 2rem;">
+            <p>Total Questions: <span id="total-questions">0</span></p>
+        </div>
+
+        <form id="question-form">
+            <div class="form-group">
+                <label>Question Text</label>
+                <textarea id="question-text" rows="3" required placeholder="Enter your question here..."></textarea>
+            </div>
+
+            <div class="btn-grid" style="margin-bottom: 1.5rem;">
+                <div class="form-group">
+                    <label>Answer 1</label>
+                    <input type="text" class="answer-input" required placeholder="Option A">
+                </div>
+                <div class="form-group">
+                    <label>Answer 2</label>
+                    <input type="text" class="answer-input" required placeholder="Option B">
+                </div>
+                <div class="form-group">
+                    <label>Answer 3</label>
+                    <input type="text" class="answer-input" required placeholder="Option C">
+                </div>
+                <div class="form-group">
+                    <label>Answer 4</label>
+                    <input type="text" class="answer-input" required placeholder="Option D">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Correct Answer</label>
+                <select id="correct-answer" required>
+                    <option value="0">Answer 1</option>
+                    <option value="1">Answer 2</option>
+                    <option value="2">Answer 3</option>
+                    <option value="3">Answer 4</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn"><i class="fas fa-plus-circle"></i> Add Question</button>
+        </form>
+
+        <div class="question-list" id="question-list">
+            <!-- Questions will be listed here -->
+        </div>
+    </div>
+
+    <!-- Load questions data first (for seeding if needed) -->
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>
